@@ -34,273 +34,280 @@ const SLIDE_MS = 700;
 
 const projects = [
   // — Publication Design —
-  {
-    id: "better-batter-menu",
-    title: "Better Batter Café Menu",
-    category: "Publication Design",
-    description:
-      "A complete 17-page food menu for Better Batter Café with appetizing layouts, clear hierarchy, and brand-aligned typography.",
-    designObjective:
-      "Turn a crowded menu into an easy-to-scan, mouthwatering reading experience that strengthens the café's brand.",
-    year: "2026",
-    software: ["Adobe InDesign", "Canva"],
-    thumbnail: "/projects/better-batter-menu.png",
-    images: [
-      "/projects/better-batter-menu.png"],
-    featured: true,
-  },
-  {
-    id: "channel-literary-folio",
-    title: "The Channel's Literary Folio",
-    category: "Publication Design",
-    description:
-      "A literary folio combining editorial elegance with expressive typography for the campus publication.",
-    designObjective:
-      "Give student writing a gallery-worthy layout that honors the work and invites reading.",
-    year: "2026",
-    software: ["Adobe InDesign", "Adobe Photoshop", "Canva"],
-    thumbnail: "/projects/channel-literary-folio.png",
-    images: ["/projects/channel-literary-folio.png"],
-    featured: true,
-  },
-  {
-    id: "newsletter-layout",
-    title: "The Channel's Newsletter",
-    category: "Publication Design",
-    description:
-      "A structured newsletter layout with modular grids, consistent spacing, and an editorial rhythm.",
-    designObjective:
-      "Establish a repeatable grid system that keeps every issue consistent and effortless to produce.",
-    year: "2024",
-    software: ["Adobe InDesign", "Adobe Photoshop", "Canva"],
-    thumbnail: "/projects/newsletter-layout.png",
-    images: ["/projects/newsletter-layout.png"],
-    featured: false,
-  },
-  // — Social Media Graphics —
-  {
-    id: "dwcl-oer-social",
-    title: "DWCL Admission",
-    category: "Social Media Graphics",
-    description:
-      "Designed a promotional social media post for the DWCL admissions campaign, using eye-catching visuals and a clear call to action to attract prospective students.",
-    designObjective:
-      "Maintain a professional institutional voice while standing out in crowded feeds.",
-    year: "2026",
-    software: ["Canva"],
-    thumbnail: "/projects/dwcl-oer-social.png",
-    images: ["/projects/dwcl-oer-social.png"],
-    link: "https://www.facebook.com/share/p/1EWhjMMo3k/",
-    featured: false,
-  },
-    {
-    id: "dwcl-oer-social2",
-    title: "EDSA People Power Revolution",
-    category: "Social Media Graphics",
-    description:
-      "Designed a commemorative social media graphic for the DWCL Facebook page to honor the EDSA People Power Revolution, using a clean layout, meaningful visuals, and institutional branding.",
-    designObjective:
-      "Maintain a professional institutional voice while standing out in crowded feeds.",
-    year: "2025",
-    software: ["Canva"],
-    thumbnail: "/projects/dwcl-oer-social2.png",
-    images: ["/projects/dwcl-oer-social2.png"],
-    link: "https://www.facebook.com/share/p/1NortX2o41/",
-    featured: false,
-  },
-    {
-    id: "dwcl-oer-social3",
-    title: "Regional PRISAA 2026",
-    category: "Social Media Graphics",
-    description:
-      "A recognition graphic celebrating the achievements of DWCL athletes at the 2026 Regional PRISAA Games through impactful visuals and clear information design.",
-    designObjective:
-      "Maintain a professional institutional voice while standing out in crowded feeds.",
-    year: "2025",
-    software: ["Canva"],
-    thumbnail: "/projects/dwcl-oer-social3.png",
-    images: ["/projects/dwcl-oer-social3.png"],
-    link: "https://www.facebook.com/share/p/1D2c4wSynp/",
-    featured: false,
-  },
-  {
-    id: "channel-social",
-    title: "The Channel's Screening",
-    category: "Social Media Graphics",
-    description:
-      "A recruitment campaign graphic inviting aspiring student journalists and creatives to join The Channel's Editorial Board through bold typography and a newspaper-inspired visual style.",
-    designObjective:
-      "Build a recognizable template system that makes daily posting fast and on-brand.",
-    year: "2024",
-    software: ["Adobe Photoshop", "Canva"],
-    thumbnail: "/projects/channel-social.png",
-    images: ["/projects/channel-social.png"],
-    link: "https://www.facebook.com/share/1HH2HHsevT/",
-    featured: false,
-  },
-    {
-    id: "channel-social2",
-    title: "Looong Weekend",
-    category: "Social Media Graphics",
-    description:
-      "A social media announcement informing the DWCL community of the long weekend using a clean layout, engaging visuals, and clear, easy-to-read information.",
-    designObjective:
-      "Build a recognizable template system that makes daily posting fast and on-brand.",
-    year: "2024",
-    software: ["Adobe Photoshop", "Canva"],
-    thumbnail: "/projects/channel-social2.png",
-    images: ["/projects/channel-social2.png"],
-    link: "https://www.facebook.com/share/p/1EqNfRXUyk/",
-    featured: false,
-  },
-  {
-    id: "csits-social",
-    title: "CSIT-S 1st General Assembly",
-    category: "Social Media Graphics",
-    description:
-      "A promotional social media graphic designed to encourage student participation in the CSIT-S General Assembly through vibrant visuals and event-focused messaging.",
-    designObjective:
-      "Give a student organization a youthful, energetic look that excites engagement.",
-    year: "2024",
-    software: ["Canva", "Adobe Photoshop"],
-    thumbnail: "/projects/csits-social.png",
-    images: ["/projects/csits-social.png"],
-    link: "https://www.facebook.com/share/p/1FACfJBinh/",
-    featured: false,
-  },
-    {
-    id: "csits-social2",
-    title: "CSIT Days 2024",
-    category: "Social Media Graphics",
-    description:
-      "A dynamic event promotion created for CSIT Days 2024, highlighting activities and celebrations with energetic visuals and cohesive branding.",
-    designObjective:
-      "Give a student organization a youthful, energetic look that excites engagement.",
-    year: "2024",
-    software: ["Canva", "Adobe Photoshop"],
-    thumbnail: "/projects/csits-social2.png",
-    images: ["/projects/csits-social2.png"],
-    link: "https://www.facebook.com/share/p/1RZtZoLvvr/",
-    featured: false,
-  },
-    {
-    id: "csits-social3",
-    title: "CSIT-S UI/UX Competition",
-    category: "Social Media Graphics",
-    description:
-      "A promotional graphic for the CSIT-S UI/UX Competition, designed to capture students' attention through modern visuals, bold typography, and a creative technology-inspired theme.",
-    designObjective:
-      "Give a student organization a youthful, energetic look that excites engagement.",
-    year: "2024",
-    software: ["Canva", "Adobe Photoshop"],
-    thumbnail: "/projects/csits-social3.png",
-    images: ["/projects/csits-social3.png"],
-    link: "https://www.facebook.com/share/p/1J71qpduzv/",
-    featured: false,
-  },
-  // — Roll-up Banners —
-  {
-    id: "dwcl-admissions-rollup",
-    title: "DWCL Admissions Roll-up Banner",
-    category: "Roll-up Banners",
-    description:
-      "A tall-format roll-up banner for DWCL admissions designed for maximum readability from a distance.",
-    designObjective:
-      "Deliver key admission information at a glance, even from across a crowded lobby.",
-    year: "2025",
-    software: ["Adobe InDesign", "Adobe Photoshop"],
-    thumbnail: "/projects/dwcl-admissions-rollup.png",
-    images: ["/projects/dwcl-admissions-rollup.png"],
-    featured: true,
-  },
-  {
-    id: "programs-rollup",
-    title: "Programs Offered Roll-up Banner",
-    category: "Roll-up Banners",
-    description:
-      "A roll-up banner summarizing all offered programs in a clean, scannable layout.",
-    designObjective:
-      "Organize dozens of programs into one glanceable, hierarchy-driven layout.",
-    year: "2025",
-    software: ["Adobe InDesign", "Adobe Photoshop"],
-    thumbnail: "/projects/programs-rollup.png",
-    images: ["/projects/programs-rollup.png"],
-    featured: false,
-  },
-  // — Tarpaulins —
-  {
-    id: "admission-tarpaulin",
-    title: "Admission is Now Open",
-    category: "Tarpaulins",
-    description:
-      "A vibrant tarpaulin announcing open admission with strong contrast and visual hierarchy.",
-    designObjective:
-      "Stop passersby and communicate urgency without sacrificing the school's identity.",
-    year: "2025",
-    software: ["Adobe Photoshop", "Canva"],
-    thumbnail: "/projects/admission-tarpaulin.png",
-    images: ["/projects/admission-tarpaulin.png"],
-    featured: false,
-  },
-  {
-    id: "programs-tarpaulin",
-    title: "Programs Offered per Department",
-    category: "Tarpaulins",
-    description:
-      "Department-wise program tarpaulins built on a consistent template with the school identity.",
-    designObjective:
-      "Create a repeatable departmental template that stays unified yet distinct.",
-    year: "2025",
-    software: ["Adobe InDesign", "Adobe Photoshop"],
-    thumbnail: "/projects/programs-tarpaulin.png",
-    images: ["/projects/programs-tarpaulin.png"],
-    featured: false,
-  },
-  // — Brochures —
-  {
-    id: "dwcl-brochure",
-    title: "DWCL Tri-fold Brochure",
-    category: "Brochures",
-    description:
-      "A tri-fold brochure presenting DWCL's story, programs, and contact details in a compact, elegant fold.",
-    designObjective:
-      "Compress an institution's story into a physical piece people actually keep.",
-    year: "2025",
-    software: ["Adobe InDesign", "Adobe Photoshop"],
-    thumbnail: "/projects/dwcl-brochure.png",
-    images: ["/projects/dwcl-brochure.png"],
-    featured: false,
-  },
-  // — Presentation Design —
-  {
-    id: "commencement-slides",
-    title: "58th DWCL Commencement Exercises",
-    category: "Presentation Design",
-    description:
-      "A complete presentation package for the 58th Commencement Exercises, from slides to stage visuals.",
-    designObjective:
-      "Make a formal ceremony feel dignified and cohesive from stage screens to print.",
-    year: "2025",
-    software: ["Microsoft PowerPoint", "Adobe Photoshop"],
-    thumbnail: "/projects/commencement-slides.png",
-    images: [
-      "/projects/commencement-slides.png"],
-    featured: true,
-  },
-  {
-    id: "clinical-graduation",
-    title: "University Presentation Slides",
-    category: "Presentation Design",
-    description:
-      "Polished university presentation templates with consistent branding and typography.",
-    designObjective:
-      "Give every lecturer a template that looks intentional without extra design work.",
-    year: "2024",
-    software: ["Microsoft PowerPoint", "Google Slides"],
-    thumbnail: "/projects/clinical-graduation.png",
-    images: ["/projects/clinical-graduation.png"],
-    featured: false,
-  },
+{
+  id: "better-batter-menu",
+  title: "Better Batter Café Menu",
+  category: "Publication Design",
+  description:
+    "A 17-page café menu designed with clear layouts and consistent branding.",
+  designObjective:
+    "Create a menu that's easy to read and visually appealing.",
+  year: "2026",
+  software: ["Adobe InDesign", "Canva"],
+  thumbnail: "/projects/better-batter-menu.png",
+  images: ["/projects/better-batter-menu.png"],
+  link: "https://heyzine.com/flip-book/2fa2486789.html",
+  featured: true,
+},
+{
+  id: "channel-literary-folio",
+  title: "The Channel's Literary Folio",
+  category: "Publication Design",
+  description:
+    "A literary folio featuring clean layouts, expressive typography, and creative editorial design.",
+  designObjective:
+    "Present student works in a clean and engaging way.",
+  year: "2026",
+  software: ["Adobe InDesign", "Adobe Photoshop", "Canva"],
+  thumbnail: "/projects/channel-literary-folio.png",
+  images: ["/projects/channel-literary-folio.png"],
+  link: "https://heyzine.com/flip-book/8f717f287d.html",
+  featured: true,
+},
+{
+  id: "newsletter-layout",
+  title: "The Channel's Newsletter",
+  category: "Publication Design",
+  description:
+    "A newsletter layout with organized content and a consistent editorial style.",
+  designObjective:
+    "Make every issue clear, organized, and easy to read.",
+  year: "2025",
+  software: ["Adobe InDesign", "Adobe Photoshop", "Canva"],
+  thumbnail: "/projects/newsletter-layout.png",
+  images: ["/projects/newsletter-layout.png"],
+  featured: false,
+},
+
+// — Social Media Graphics —
+{
+  id: "dwcl-oer-social",
+  title: "DWCL Admission",
+  category: "Social Media Graphics",
+  description:
+    "A social media graphic promoting DWCL admissions with bold visuals and clear messaging.",
+  designObjective:
+    "Attract prospective students while maintaining the school's branding.",
+  year: "2026",
+  software: ["Canva"],
+  thumbnail: "/projects/dwcl-oer-social.png",
+  images: ["/projects/dwcl-oer-social.png"],
+  link: "https://www.facebook.com/share/p/1EWhjMMo3k/",
+  featured: false,
+},
+{
+  id: "dwcl-oer-social2",
+  title: "EDSA People Power Revolution",
+  category: "Social Media Graphics",
+  description:
+    "A commemorative social media graphic honoring the EDSA People Power Revolution.",
+  designObjective:
+    "Create a respectful design while following the school's visual identity.",
+  year: "2026",
+  software: ["Canva"],
+  thumbnail: "/projects/dwcl-oer-social2.png",
+  images: ["/projects/dwcl-oer-social2.png"],
+  link: "https://www.facebook.com/share/p/1NortX2o41/",
+  featured: false,
+},
+{
+  id: "dwcl-oer-social3",
+  title: "Regional PRISAA 2026",
+  category: "Social Media Graphics",
+  description:
+    "A recognition graphic celebrating DWCL athletes' achievements at the Regional PRISAA Games.",
+  designObjective:
+    "Highlight the athletes' success through clear and engaging visuals.",
+  year: "2026",
+  software: ["Canva"],
+  thumbnail: "/projects/dwcl-oer-social3.png",
+  images: ["/projects/dwcl-oer-social3.png"],
+  link: "https://www.facebook.com/share/p/1D2c4wSynp/",
+  featured: false,
+},
+{
+  id: "channel-social",
+  title: "The Channel's Screening",
+  category: "Social Media Graphics",
+  description:
+    "A recruitment graphic inviting students to join The Channel's Editorial Board.",
+  designObjective:
+    "Encourage students to become part of the campus publication.",
+  year: "2024",
+  software: ["Adobe Photoshop", "Canva"],
+  thumbnail: "/projects/channel-social.png",
+  images: ["/projects/channel-social.png"],
+  link: "https://www.facebook.com/share/1HH2HHsevT/",
+  featured: false,
+},
+{
+  id: "channel-social2",
+  title: "Long Weekend",
+  category: "Social Media Graphics",
+  description:
+    "A social media announcement informing the community about the long weekend.",
+  designObjective:
+    "Share important information in a simple and engaging way.",
+  year: "2024",
+  software: ["Adobe Photoshop", "Canva"],
+  thumbnail: "/projects/channel-social2.png",
+  images: ["/projects/channel-social2.png"],
+  link: "https://www.facebook.com/share/p/1EqNfRXUyk/",
+  featured: false,
+},
+{
+  id: "csits-social",
+  title: "CSIT-S 1st General Assembly",
+  category: "Social Media Graphics",
+  description:
+    "A promotional graphic for the CSIT-S General Assembly event.",
+  designObjective:
+    "Encourage students to attend and participate.",
+  year: "2024",
+  software: ["Canva", "Adobe Photoshop"],
+  thumbnail: "/projects/csits-social.png",
+  images: ["/projects/csits-social.png"],
+  link: "https://www.facebook.com/share/p/1FACfJBinh/",
+  featured: false,
+},
+{
+  id: "csits-social2",
+  title: "CSIT Days 2024",
+  category: "Social Media Graphics",
+  description:
+    "An event promotion highlighting the activities of CSIT Days 2024.",
+  designObjective:
+    "Create excitement and increase student participation.",
+  year: "2024",
+  software: ["Canva", "Adobe Photoshop"],
+  thumbnail: "/projects/csits-social2.png",
+  images: ["/projects/csits-social2.png"],
+  link: "https://www.facebook.com/share/p/1RZtZoLvvr/",
+  featured: false,
+},
+{
+  id: "csits-social3",
+  title: "CSIT-S UI/UX Competition",
+  category: "Social Media Graphics",
+  description:
+    "A promotional graphic for the CSIT-S UI/UX Competition.",
+  designObjective:
+    "Capture students' attention and encourage participation.",
+  year: "2025",
+  software: ["Canva", "Adobe Photoshop"],
+  thumbnail: "/projects/csits-social3.png",
+  images: ["/projects/csits-social3.png"],
+  link: "https://www.facebook.com/share/p/1J71qpduzv/",
+  featured: false,
+},
+
+// — Roll-up Banners —
+{
+  id: "dwcl-admissions-rollup",
+  title: "DWCL Admissions Roll-up Banner",
+  category: "Roll-up Banners",
+  description:
+    "A roll-up banner promoting DWCL admissions with clear and readable information.",
+  designObjective:
+    "Present key admission details in a visually appealing format.",
+  year: "2026",
+  software: ["Adobe InDesign", "Adobe Photoshop"],
+  thumbnail: "/projects/dwcl-admissions-rollup.png",
+  images: ["/projects/dwcl-admissions-rollup.png"],
+  featured: true,
+},
+{
+  id: "programs-rollup",
+  title: "Programs Offered Roll-up Banner",
+  category: "Roll-up Banners",
+  description:
+    "A roll-up banner showcasing the academic programs offered by DWCL.",
+  designObjective:
+    "Present all programs in a clean and organized layout.",
+  year: "2026",
+  software: ["Adobe InDesign", "Adobe Photoshop"],
+  thumbnail: "/projects/programs-rollup.png",
+  images: ["/projects/programs-rollup.png"],
+  featured: false,
+},
+
+// — Tarpaulins —
+{
+  id: "admission-tarpaulin",
+  title: "Admission is Now Open",
+  category: "Tarpaulins",
+  description:
+    "A promotional tarpaulin announcing that DWCL admissions are now open.",
+  designObjective:
+    "Catch attention and encourage prospective students to apply.",
+  year: "2026",
+  software: ["Adobe Photoshop", "Canva"],
+  thumbnail: "/projects/admission-tarpaulin.png",
+  images: ["/projects/admission-tarpaulin.png"],
+  featured: false,
+},
+{
+  id: "programs-tarpaulin",
+  title: "Programs Offered per Department",
+  category: "Tarpaulins",
+  description:
+    "A tarpaulin displaying the academic programs offered by each department.",
+  designObjective:
+    "Present department information in a clear and consistent layout.",
+  year: "2026",
+  software: ["Adobe InDesign", "Adobe Photoshop"],
+  thumbnail: "/projects/programs-tarpaulin.png",
+  images: ["/projects/programs-tarpaulin.png"],
+  featured: false,
+},
+
+// — Brochures —
+{
+  id: "dwcl-brochure",
+  title: "DWCL Tri-fold Brochure",
+  category: "Brochures",
+  description:
+    "A tri-fold brochure introducing DWCL and its academic programs.",
+  designObjective:
+    "Provide important school information in a compact format.",
+  year: "2026",
+  software: ["Adobe InDesign", "Adobe Photoshop"],
+  thumbnail: "/projects/dwcl-brochure.png",
+  images: ["/projects/dwcl-brochure.png"],
+  featured: false,
+},
+
+// — Presentation Design —
+{
+  id: "commencement-slides",
+  title: "58th DWCL Commencement Exercises",
+  category: "Presentation Design",
+  description:
+    "A presentation design for the 58th DWCL Commencement Exercises.",
+  designObjective:
+    "Deliver a professional and consistent visual experience during the ceremony.",
+  year: "2026",
+  software: ["Microsoft PowerPoint", "Adobe Photoshop"],
+  thumbnail: "/projects/commencement-slides.png",
+  images: ["/projects/commencement-slides.png"],
+  link: "https://heyzine.com/flip-book/bcd5f1e5c7.html",
+  featured: true,
+},
+{
+  id: "clinical-graduation",
+  title: "3rd DWCL Clinical Graduation",
+  category: "Presentation Design",
+  description:
+    "A presentation design created for the 3rd DWCL Clinical Graduation ceremony.",
+  designObjective:
+    "Support the event with clean, organized, and professional presentation slides.",
+  year: "2026",
+  software: ["Microsoft PowerPoint", "Google Slides"],
+  thumbnail: "/projects/clinical-graduation.png",
+  images: ["/projects/clinical-graduation.png"],
+  link: "https://heyzine.com/flip-book/73ad5f20cd.html",
+  featured: false,
+},
   // — Branding —
   /*{
     id: "better-batter-branding",

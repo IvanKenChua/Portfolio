@@ -1,4 +1,4 @@
-import {Palette, BookOpen, MonitorSmartphone, Camera,} from "lucide-react";
+import { Palette, BookOpen, MonitorSmartphone, Camera } from "lucide-react";
 
 const highlights = [
   {
@@ -47,7 +47,7 @@ export const About = () => {
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a <span className="text-foreground font-medium">Graphic Designer</span>{" "}
+                I'm a <span className="text-foreground font-medium">Creative Designer</span>{" "}
                 passionate about creating meaningful visual experiences. Through my internship at the <span className="text-foreground font-medium">DWCL Office of External Relations</span>{" "}
                 and leadership roles in student organizations, I've gained experience in publication design, 
                 branding, presentation design, social media graphics, and photography.

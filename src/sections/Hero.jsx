@@ -106,14 +106,15 @@ export const Hero = () => {
             {/* Headline */}
             <div className="space-y-5">
               <h1 className="text-[clamp(2.5rem,7vw,5rem)] font-bold leading-[1.1] tracking-tight animate-fade-in animation-delay-100">
-                Designing <span className="text-primary glow-text">visuals</span>{" "}
-                solutions with{" "}
+                Designing{" "}
+                <span className="text-primary glow-text">visual</span> solutions
+                with{" "}
                 <span className="font-serif italic font-normal text-foreground">
                   purpose.
                 </span>
               </h1>
               <p className="text-base sm:text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Ivan Ken Chua, a Graphic Designer specializing in
+                Hi, I'm <span className="text-foreground font-medium">Ivan Ken Chua</span>, a Creative Designer specializing in
                 branding, publication design, social media graphics, presentation
                 design, and photography. I create clean, modern, and strategic
                 visuals that help brands communicate with clarity and confidence.
@@ -125,7 +126,12 @@ export const Hero = () => {
               <Button as="a" href="#contact" size="lg">
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton size="lg">
+              <AnimatedBorderButton
+                as="a"
+                href="/%28RESUME%29%20CHUA%2C%20Ivan%20Ken%20B.pdf"
+                download="(RESUME) CHUA, Ivan Ken B.pdf"
+                size="lg"
+              >
                 <Download className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>

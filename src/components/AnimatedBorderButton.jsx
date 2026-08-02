@@ -1,4 +1,5 @@
 export const AnimatedBorderButton = ({
+  as: Tag = "button",
   children,
   className = "",
   size = "default",
@@ -11,8 +12,8 @@ export const AnimatedBorderButton = ({
   };
 
   return (
-    <button
-      type="button"
+    <Tag
+      {...(Tag === "button" ? { type: "button" } : {})}
       className={`relative inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-border text-foreground font-medium transition-all duration-1000 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none group overflow-visible animated-border ${sizeClasses[size]} ${className}`}
       {...props}
     >
@@ -39,6 +40,6 @@ export const AnimatedBorderButton = ({
       <span className="relative z-10 flex items-center justify-center gap-2">
         {children}
       </span>
-    </button>
+    </Tag>
   );
 };

@@ -35,6 +35,15 @@ const experiences = [
     technologies: ["Canon", "Lightroom"],
     current: false,
   },
+  {
+    period: "Aug 2023 — Jun 2025",
+    role: "Creatives and Technical Committee",
+    company: "Computer Science and Information Technology Society",
+    description:
+      "Designed promotional materials for student activities and events.",
+    technologies: ["Canva", "PixelLab"],
+    current: false,
+  },
 ];
 
 export const Experience = () => {
