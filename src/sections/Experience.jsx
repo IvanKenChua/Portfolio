@@ -1,11 +1,29 @@
 const experiences = [
   {
+    period: "May 2026 — Present",
+    role: "Media and Creatives Volunteer",
+    company: "DEVCON Legazpi Chapter",
+    description:
+      "Designed promotional materials, social media graphics, certificates, and merchandise for the Heroes of Innovation Challenge 2026: Ibalong Festival Hackathon, resulting in visually consistent and professional event branding.",
+    technologies: ["Canva"],
+    current: false,
+  },
+  {
     period: "Feb 2026 — May 2026",
     role: "Multimedia Intern",
     company: "DWCL Office of External Relations",
     description:
       "Designed promotional materials, roll-up banners, brochures, tarpaulins, presentation slides, certificates, and social media graphics that supported the college's admissions campaigns, institutional branding, and official events.",
     technologies: ["Canva", "Capcut", "Adobe Photoshop"],
+    current: false,
+  },
+  {
+    period: "Aug 2025 — Present",
+    role: "Creative Designer",
+    company: "Freelance",
+    description:
+      "Designed promotional content for clients, ensuring visually appealing and brand-consistent.",
+    technologies: ["Canva", "Capcut", "PixelLab", "Adobe Indesign", "Adobe Photoshop"],
     current: false,
   },
   {
