@@ -13,7 +13,7 @@ import { useMemo } from "react";
 const socials = [
   {
     icon: Github,
-    href: "https://github.com/BanDapol",
+    href: "https://github.com/IvanKenChua",
     label: "GitHub",
   },
   {
