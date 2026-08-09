@@ -308,6 +308,36 @@ const projects = [
   link: "https://heyzine.com/flip-book/46fdce2198.html",
   featured: false,
 },
+{
+  id: "college-intramurals2025",
+  title: "2025 DWCL College Intramurals",
+  category: "Presentation Design",
+  description:
+    "A presentation design created for the 2025 DWCL College Intramurals closing ceremony.",
+  designObjective:
+    "Support the event with clean, organized, and professional presentation slides.",
+  year: "2025",
+  software: ["Microsoft PowerPoint", "Google Slides"],
+  thumbnail: "/projects/college-intramurals2025.png",
+  images: ["/projects/college-intramurals2025.png"],
+  link: "https://heyzine.com/flip-book/1b22808bdb.html",
+  featured: false,
+},
+{
+    id: "2dibaynigator",
+    title: "2DibayNigator",
+    category: "Mobile Application",
+    description:
+      "A mobile navigation application concept with a clean, intuitive interface.",
+    designObjective:
+      "Make campus navigation feel effortless with a clear, touch-first interface.",
+    year: "2025",
+    software: ["Figma", "Adobe Photoshop"],
+    thumbnail: "/projects/2dibaynigator-usermanual.png",
+    images: ["/projects/2dibaynigator-usermanual.png"],
+    link: "https://heyzine.com/flip-book/edcf3cfb3a.html",
+    featured: true,
+  },
   // — Branding —
   /*{
     id: "better-batter-branding",
