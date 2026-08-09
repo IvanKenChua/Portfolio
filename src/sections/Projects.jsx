@@ -290,7 +290,7 @@ const projects = [
   software: ["Microsoft PowerPoint", "Adobe Photoshop"],
   thumbnail: "/projects/commencement-slides.png",
   images: ["/projects/commencement-slides.png"],
-  link: "https://heyzine.com/flip-book/bcd5f1e5c7.html",
+  link: "https://heyzine.com/flip-book/7b18cfc94f.html",
   featured: true,
 },
 {
@@ -305,7 +305,7 @@ const projects = [
   software: ["Microsoft PowerPoint", "Google Slides"],
   thumbnail: "/projects/clinical-graduation.png",
   images: ["/projects/clinical-graduation.png"],
-  link: "https://heyzine.com/flip-book/73ad5f20cd.html",
+  link: "https://heyzine.com/flip-book/46fdce2198.html",
   featured: false,
 },
   // — Branding —
