@@ -31,7 +31,7 @@ export const Footer = () => {
               IKBC<span className="text-primary">.</span>
             </Link>
             <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} Ivan Ken Chua. All rights reserved.
+              © {currentYear} Ivan Ken Chua.
             </p>
           </div>
 

@@ -6,8 +6,10 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  ArrowRight,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, useCallback } from "react";
+import { Button } from "@/components/Button";
 
 const categories = [
   "All",
@@ -780,6 +782,39 @@ export const Projects = () => {
 
         {selectedProject && <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
         {selectedSocialProject && <SocialMediaModal project={selectedSocialProject} onClose={() => setSelectedSocialProject(null)} />}
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-pad relative overflow-hidden">
+        <div
+          className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl"
+          aria-hidden="true"
+        />
+
+        <div className="section-container relative z-10 text-center max-w-3xl mx-auto">
+          <span className="section-eyebrow animate-fade-in">Have a project in mind?</span>
+
+          <h2 className="section-heading mt-4 mb-5 animate-fade-in animation-delay-100">
+            Let's create something{" "}
+            <span className="font-serif italic font-normal text-foreground">
+              extraordinary.
+            </span>
+          </h2>
+
+          <p className="text-muted-foreground animate-fade-in animation-delay-200 mb-8">
+            I'd love to hear about your vision. Let's turn your ideas into compelling visual experiences.
+          </p>
+
+          <div className="flex justify-center animate-fade-in animation-delay-300">
+            <Button as="a" href="/contact" size="lg">
+              Start a Conversation <ArrowRight className="w-5 h-5" />
+            </Button>
+          </div>
+        </div>
       </section>
     </div>
   );
