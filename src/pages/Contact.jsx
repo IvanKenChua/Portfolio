@@ -20,7 +20,7 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+63 (992) 621-7380",
+    value: "(+63) 992-621-7380",
     href: "tel:+639926217380",
   },
   {
@@ -112,8 +112,7 @@ export const Contact = () => {
               </span>
             </h2>
             <p className="text-muted-foreground animate-fade-in animation-delay-200">
-              Have a project, brand, or creative idea in mind? I'd love to hear about it. Whether it's publication design, social media graphics,
-              branding, or digital content, let's create something that makes an impact.
+              Have a project, brand, or creative idea in mind? I'd love to hear about it. Whether it's publication design, social media graphics, or digital content, let's create something that makes an impact.
             </p>
           </div>
 
@@ -122,7 +121,7 @@ export const Contact = () => {
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Name
+                    Name *
                   </label>
                   <input
                     id="name"
@@ -130,7 +129,7 @@ export const Contact = () => {
                     type="text"
                     required
                     autoComplete="name"
-                    placeholder="Your name..."
+                    placeholder="Your complete name"
                     value={formData.name}
                     onChange={handleChange("name")}
                     className={inputClasses}
@@ -139,7 +138,7 @@ export const Contact = () => {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email
+                    Email *
                   </label>
                   <input
                     id="email"
@@ -147,7 +146,7 @@ export const Contact = () => {
                     type="email"
                     required
                     autoComplete="email"
-                    placeholder="your@email.com"
+                    placeholder="Your.email@example.com"
                     value={formData.email}
                     onChange={handleChange("email")}
                     className={inputClasses}
@@ -156,7 +155,7 @@ export const Contact = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message
+                    Message *
                   </label>
                   <textarea
                     id="message"
@@ -165,7 +164,7 @@ export const Contact = () => {
                     required
                     value={formData.message}
                     onChange={handleChange("message")}
-                    placeholder="Your message..."
+                    placeholder="Tell me more about your project in mind..."
                     className={`${inputClasses} resize-none`}
                   />
                 </div>
@@ -243,7 +242,7 @@ export const Contact = () => {
                   <span className="font-medium">Currently Available</span>
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  I'm open to freelance projects, internships, and full-time opportunities in graphic design and creative media.
+                  I'm open to freelance projects and full-time opportunities in graphic design and creative media.
                   Feel free to reach out—I'd love to discuss how we can work together.
                 </p>
               </div>

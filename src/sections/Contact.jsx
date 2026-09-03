@@ -254,7 +254,7 @@ export const Contact = () => {
                 <span className="font-medium">Currently Available</span>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                I'm open to freelance projects, internships, and full-time opportunities in graphic design and creative media.
+                I'm open to freelance projects and full-time opportunities in graphic design and creative media.
                 Feel free to reach out—I'd love to discuss how we can work together.
               </p>
             </div>

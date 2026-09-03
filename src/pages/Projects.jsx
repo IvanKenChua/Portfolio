@@ -735,12 +735,12 @@ export const Projects = () => {
 
         <div className="section-container relative z-10">
           <div className="text-center mx-auto max-w-3xl mb-10 md:mb-12">
-            <span className="section-eyebrow animate-fade-in">Featured Work</span>
+            <span className="section-eyebrow animate-fade-in">My Portfolio</span>
             <h2 className="section-heading mt-4 mb-5 animate-fade-in animation-delay-100">
-              Projects that <span className="font-serif italic font-normal text-foreground">make an impact.</span>
+              Selected <span className="font-serif italic font-normal text-foreground">projects.</span>
             </h2>
             <p className="text-muted-foreground animate-fade-in animation-delay-200">
-              A curated selection of design work across branding, publication, digital media, and beyond.
+              A collection of design work spanning branding, publication, social media, presentations, and print.
             </p>
           </div>
 
