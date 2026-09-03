@@ -2,17 +2,18 @@ import { Button } from "@/components/Button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
+  { href: "/about", label: "About" },
+  { href: "/skills", label: "Skills" },
+  { href: "/projects", label: "Projects" },
 ];
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,31 +54,41 @@ export const Navbar = () => {
         className="section-container flex items-center justify-between"
         aria-label="Main navigation"
       >
-        <a
-          href="#"
+        <Link
+          to="/"
           className="text-xl font-bold tracking-tight hover:text-primary transition-colors"
         >
           IKBC<span className="text-primary">.</span>
-        </a>
+        </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-1">
-          <div className="glass rounded-full px-1.5 py-1 flex items-center gap-1">
+        {/* Desktop Nav - All links on right */}
+        <div className="hidden md:flex items-center gap-3">
+          <div className="glass rounded-full px-1.5 py-1 flex items-center gap-1 h-10">
+            <Link
+              to="/"
+              className={`inline-flex items-center justify-center h-full px-4 text-sm rounded-full transition-colors ${
+                location.pathname === "/"
+                  ? "text-foreground bg-surface"
+                  : "text-muted-foreground hover:text-foreground hover:bg-surface"
+              }`}
+            >
+              Home
+            </Link>
             {navLinks.map((link) => (
-              <a
-                href={link.href}
+              <Link
+                to={link.href}
                 key={link.href}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface transition-colors"
+                className={`inline-flex items-center justify-center h-full px-4 text-sm rounded-full transition-colors ${
+                  location.pathname === link.href
+                    ? "text-foreground bg-surface"
+                    : "text-muted-foreground hover:text-foreground hover:bg-surface"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
-        </div>
-
-        {/* CTA + Theme Toggle */}
-        <div className="hidden md:flex items-center gap-3">
-          <Button size="sm" as="a" href="#contact">
+          <Button size="sm" as={Link} to="/contact" className="h-10">
             Contact Me
           </Button>
           <ThemeToggle />
@@ -102,20 +113,37 @@ export const Navbar = () => {
           className="md:hidden glass-strong animate-fade-in border-t border-border/50"
         >
           <div className="section-container py-6 flex flex-col gap-1 max-h-[calc(100vh-5rem)] overflow-y-auto">
+            <Link
+              to="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`text-lg py-3 px-3 rounded-xl transition-colors ${
+                location.pathname === "/"
+                  ? "text-foreground bg-surface"
+                  : "text-muted-foreground hover:text-foreground hover:bg-surface"
+              }`}
+            >
+              Home
+            </Link>
             {navLinks.map((link) => (
-              <a
-                href={link.href}
+              <Link
+                to={link.href}
                 key={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg text-muted-foreground hover:text-foreground py-3 px-3 rounded-xl hover:bg-surface transition-colors"
+                className={`text-lg py-3 px-3 rounded-xl transition-colors ${
+                  location.pathname === link.href
+                    ? "text-foreground bg-surface"
+                    : "text-muted-foreground hover:text-foreground hover:bg-surface"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
 
             <div className="mt-4 flex items-center gap-3">
               <Button
                 className="flex-1"
+                as={Link}
+                to="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact Me

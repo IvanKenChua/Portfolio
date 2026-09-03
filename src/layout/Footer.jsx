@@ -1,4 +1,5 @@
 import { Github, Linkedin, Facebook } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/IvanKenChua", label: "GitHub" },
@@ -7,11 +8,11 @@ const socialLinks = [
 ];
 
 const footerLinks = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/skills", label: "Skills" },
+  { href: "/projects", label: "Projects" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export const Footer = () => {
@@ -23,12 +24,12 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="text-xl font-bold tracking-tight hover:text-primary transition-colors"
             >
               IKBC<span className="text-primary">.</span>
-            </a>
+            </Link>
             <p className="text-sm text-muted-foreground mt-2">
               © {currentYear} Ivan Ken Chua. All rights reserved.
             </p>
@@ -39,12 +40,12 @@ export const Footer = () => {
             <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3">
               {footerLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -265,6 +265,14 @@ html.theme-transition *::after {
     animation-play-state: paused;
   }
 
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   .animation-delay-100 {
     animation-delay: 100ms;
   }
