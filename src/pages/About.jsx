@@ -97,10 +97,10 @@ export const About = () => {
               </div>
 
               <h2 className="section-heading animate-fade-in animation-delay-100">
-                Creating visual stories,{" "}
                 <span className="font-serif italic font-normal text-foreground">
-                  one design at a time.
+                  Hello, I'm{" "}
                 </span>
+                IVAN!
               </h2>
 
               <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
@@ -151,7 +151,7 @@ export const About = () => {
             </div>
 
             {/* Right Column - Profile Image */}
-            <div className="animate-fade-in animation-delay-300 lg:-mt-10">
+            <div className="animate-fade-in animation-delay-300 lg:mt-16">
               <div className="relative max-w-xs sm:max-w-sm mx-auto">
                 {/* Glow */}
                 <div
