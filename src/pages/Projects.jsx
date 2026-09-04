@@ -19,8 +19,8 @@ const categories = [
   "Tarpaulins",
   "Prints",
   "Presentation Design",
-  "Photography",
   "UI/UX",
+  "Lanyard",
 ];
 
 const socialMediaProjects = [
@@ -423,7 +423,38 @@ const presentationProjects = [
 
 const otherProjects = [];
 
-const projects = [...posterProjects, ...socialMediaProjects, ...tarpProjects, ...rollupProjects, ...printProjects, ...presentationProjects, ...otherProjects];
+const lanyardProjects = [
+  {
+    id: "channel-lanyard",
+    title: "The Channel Lanyard",
+    category: "Lanyard",
+    description: "A lanyard design for The Channel, the official student publication of Divine Word College of Legazpi.",
+    year: "2025",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    cover: "/projects/lanyard/the_channel/the_channel_lanyard-cover.png",
+    images: [
+      "/projects/lanyard/the_channel/the_channel_lanyard-cover.png",
+      "/projects/lanyard/the_channel/the_channel_lanyard.png",
+    ],
+    featured: true,
+  },
+  {
+    id: "machighian-lanyard",
+    title: "The Machighian Lanyard",
+    category: "Lanyard",
+    description: "A lanyard design for The Machighian, the official school-community publication of Macalaya National High School.",
+    year: "2026",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    cover: "/projects/lanyard/the_machighian/the_machighian_lanyard-cover.png",
+    images: [
+      "/projects/lanyard/the_machighian/the_machighian_lanyard-cover.png",
+      "/projects/lanyard/the_machighian/the_machighian_lanyard.png",
+    ],
+    featured: true,
+  },
+];
+
+const projects = [...posterProjects, ...socialMediaProjects, ...tarpProjects, ...rollupProjects, ...printProjects, ...presentationProjects, ...lanyardProjects, ...otherProjects];
 
 const hideBrokenImage = (e) => {
   e.currentTarget.remove();
@@ -707,8 +738,8 @@ export const Projects = () => {
   const filteredProjects = useMemo(() => {
     const list = activeCategory === "All" ? projects : projects.filter((p) => p.category === activeCategory);
     return [...list].sort((a, b) => {
-      const aGallery = socialMediaProjects.some((sp) => sp.id === a.id) || posterProjects.some((pp) => pp.id === a.id) || tarpProjects.some((tp) => tp.id === a.id) || rollupProjects.some((rp) => rp.id === a.id) || printProjects.some((pp) => pp.id === a.id) || presentationProjects.some((pp) => pp.id === a.id);
-      const bGallery = socialMediaProjects.some((sp) => sp.id === b.id) || posterProjects.some((pp) => pp.id === b.id) || tarpProjects.some((tp) => tp.id === b.id) || rollupProjects.some((rp) => rp.id === b.id) || printProjects.some((pp) => pp.id === b.id) || presentationProjects.some((pp) => pp.id === b.id);
+      const aGallery = socialMediaProjects.some((sp) => sp.id === a.id) || posterProjects.some((pp) => pp.id === a.id) || tarpProjects.some((tp) => tp.id === a.id) || rollupProjects.some((rp) => rp.id === a.id) || printProjects.some((pp) => pp.id === a.id) || presentationProjects.some((pp) => pp.id === a.id) || lanyardProjects.some((lp) => lp.id === a.id);
+      const bGallery = socialMediaProjects.some((sp) => sp.id === b.id) || posterProjects.some((pp) => pp.id === b.id) || tarpProjects.some((tp) => tp.id === b.id) || rollupProjects.some((rp) => rp.id === b.id) || printProjects.some((pp) => pp.id === b.id) || presentationProjects.some((pp) => pp.id === b.id) || lanyardProjects.some((lp) => lp.id === b.id);
       if (aGallery && !bGallery) return -1;
       if (!aGallery && bGallery) return 1;
       return Number(b.featured || false) - Number(a.featured || false);
@@ -716,7 +747,7 @@ export const Projects = () => {
   }, [activeCategory]);
 
   const isGalleryProject = useCallback((project) => {
-    return socialMediaProjects.some((sp) => sp.id === project.id) || posterProjects.some((pp) => pp.id === project.id) || tarpProjects.some((tp) => tp.id === project.id) || rollupProjects.some((rp) => rp.id === project.id) || printProjects.some((pp) => pp.id === project.id) || presentationProjects.some((pp) => pp.id === project.id);
+    return socialMediaProjects.some((sp) => sp.id === project.id) || posterProjects.some((pp) => pp.id === project.id) || tarpProjects.some((tp) => tp.id === project.id) || rollupProjects.some((rp) => rp.id === project.id) || printProjects.some((pp) => pp.id === project.id) || presentationProjects.some((pp) => pp.id === project.id) || lanyardProjects.some((lp) => lp.id === project.id);
   }, []);
 
   const handleOpen = useCallback((project) => {

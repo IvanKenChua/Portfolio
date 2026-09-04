@@ -25,6 +25,7 @@ const categories = [
   "UI/UX",
   "Mobile Application",
   "Print Design",
+  "Lanyard",
 ];
 
 const GAP = 20;
@@ -338,7 +339,43 @@ const projects = [
     link: "https://heyzine.com/flip-book/edcf3cfb3a.html",
     featured: true,
   },
-  // — Branding —
+  // — Lanyard —
+{
+  id: "channel-lanyard",
+  title: "The Channel Lanyard",
+  category: "Lanyard",
+  description:
+    "A lanyard design for The Channel, the official student publication of Divine Word College of Legazpi.",
+  designObjective:
+    "Create a professional and recognizable lanyard that represents the publication's identity.",
+  year: "2026",
+  software: ["Adobe Photoshop", "Adobe Illustrator"],
+  thumbnail: "/projects/lanyard/the_channel/the_channel_lanyard-cover.png",
+  images: [
+    "/projects/lanyard/the_channel/the_channel_lanyard-cover.png",
+    "/projects/lanyard/the_channel/the_channel_lanyard.png",
+  ],
+  featured: true,
+},
+{
+  id: "machighian-lanyard",
+  title: "The Machighian Lanyard",
+  category: "Lanyard",
+  description:
+    "A lanyard design for The Machighian, the official school-community publication of Macalaya National High School.",
+  designObjective:
+    "Design a lanyard that reflects the school-community publication's identity and mission.",
+  year: "2026",
+  software: ["Adobe Photoshop", "Adobe Illustrator"],
+  thumbnail: "/projects/lanyard/the_machighian/the_machighian_lanyard-cover.png",
+  images: [
+    "/projects/lanyard/the_machighian/the_machighian_lanyard-cover.png",
+    "/projects/lanyard/the_machighian/the_machighian_lanyard.png",
+  ],
+  featured: true,
+},
+
+// — Branding —
   /*{
     id: "better-batter-branding",
     title: "Better Batter Café Designs",
