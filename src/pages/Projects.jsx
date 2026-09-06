@@ -19,7 +19,7 @@ const categories = [
   "Tarpaulins",
   "Prints",
   "Presentation Design",
-  "UI/UX",
+  "Sublimation",
   "Lanyard",
 ];
 
@@ -421,7 +421,38 @@ const presentationProjects = [
   },
 ];
 
-const otherProjects = [];
+const sublimationProjects = [
+  {
+    id: "machighian-jacket",
+    title: "The Machighian Jacket",
+    category: "Sublimation",
+    description: "A sublimation-printed jacket design for The Machighian, featuring custom patterns and school branding.",
+    year: "2026",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    cover: "/projects/sublimation/the_machighian_jacket/the_machighian_jacket-cover.png",
+    images: [
+      "/projects/sublimation/the_machighian_jacket/the_machighian_jacket-cover.png",
+      "/projects/sublimation/the_machighian_jacket/the_machighian_jacket1.png",
+      "/projects/sublimation/the_machighian_jacket/the_machighian_jacket2.png",
+    ],
+    featured: true,
+  },
+  {
+    id: "machighian-polo-shirt",
+    title: "The Machighian Polo Shirt",
+    category: "Sublimation",
+    description: "A sublimation-printed polo shirt design for The Machighian, showcasing school identity through vibrant apparel graphics.",
+    year: "2026",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    cover: "/projects/sublimation/the_machighian_polo_shirt/the_machighian_poloshirt-cover.png",
+    images: [
+      "/projects/sublimation/the_machighian_polo_shirt/the_machighian_poloshirt-cover.png",
+      "/projects/sublimation/the_machighian_polo_shirt/the_machighian_poloshirt1.png",
+      "/projects/sublimation/the_machighian_polo_shirt/the_machighian_poloshirt2.png",
+    ],
+    featured: true,
+  },
+];
 
 const lanyardProjects = [
   {
@@ -454,7 +485,7 @@ const lanyardProjects = [
   },
 ];
 
-const projects = [...posterProjects, ...socialMediaProjects, ...tarpProjects, ...rollupProjects, ...printProjects, ...presentationProjects, ...lanyardProjects, ...otherProjects];
+const projects = [...posterProjects, ...socialMediaProjects, ...tarpProjects, ...rollupProjects, ...printProjects, ...presentationProjects, ...sublimationProjects, ...lanyardProjects];
 
 const hideBrokenImage = (e) => {
   e.currentTarget.remove();
@@ -484,7 +515,7 @@ const ProjectCard = ({ project, onOpen, isSocialMedia }) => (
         </span>
         <span className="absolute top-3 right-3 glass rounded-full px-2.5 py-1 text-xs font-medium text-highlight flex items-center gap-1 z-10">
           <Star className="w-3 h-3 fill-current" aria-hidden="true" />
-          {project.images.length} designs
+          {project.images.filter((img) => !img.toLowerCase().includes("cover")).length} designs
         </span>
       </div>
     ) : (
@@ -738,8 +769,8 @@ export const Projects = () => {
   const filteredProjects = useMemo(() => {
     const list = activeCategory === "All" ? projects : projects.filter((p) => p.category === activeCategory);
     return [...list].sort((a, b) => {
-      const aGallery = socialMediaProjects.some((sp) => sp.id === a.id) || posterProjects.some((pp) => pp.id === a.id) || tarpProjects.some((tp) => tp.id === a.id) || rollupProjects.some((rp) => rp.id === a.id) || printProjects.some((pp) => pp.id === a.id) || presentationProjects.some((pp) => pp.id === a.id) || lanyardProjects.some((lp) => lp.id === a.id);
-      const bGallery = socialMediaProjects.some((sp) => sp.id === b.id) || posterProjects.some((pp) => pp.id === b.id) || tarpProjects.some((tp) => tp.id === b.id) || rollupProjects.some((rp) => rp.id === b.id) || printProjects.some((pp) => pp.id === b.id) || presentationProjects.some((pp) => pp.id === b.id) || lanyardProjects.some((lp) => lp.id === b.id);
+      const aGallery = socialMediaProjects.some((sp) => sp.id === a.id) || posterProjects.some((pp) => pp.id === a.id) || tarpProjects.some((tp) => tp.id === a.id) || rollupProjects.some((rp) => rp.id === a.id) || printProjects.some((pp) => pp.id === a.id) || presentationProjects.some((pp) => pp.id === a.id) || sublimationProjects.some((sp) => sp.id === a.id) || lanyardProjects.some((lp) => lp.id === a.id);
+      const bGallery = socialMediaProjects.some((sp) => sp.id === b.id) || posterProjects.some((pp) => pp.id === b.id) || tarpProjects.some((tp) => tp.id === b.id) || rollupProjects.some((rp) => rp.id === b.id) || printProjects.some((pp) => pp.id === b.id) || presentationProjects.some((pp) => pp.id === b.id) || sublimationProjects.some((sp) => sp.id === b.id) || lanyardProjects.some((lp) => lp.id === b.id);
       if (aGallery && !bGallery) return -1;
       if (!aGallery && bGallery) return 1;
       return Number(b.featured || false) - Number(a.featured || false);
@@ -747,7 +778,7 @@ export const Projects = () => {
   }, [activeCategory]);
 
   const isGalleryProject = useCallback((project) => {
-    return socialMediaProjects.some((sp) => sp.id === project.id) || posterProjects.some((pp) => pp.id === project.id) || tarpProjects.some((tp) => tp.id === project.id) || rollupProjects.some((rp) => rp.id === project.id) || printProjects.some((pp) => pp.id === project.id) || presentationProjects.some((pp) => pp.id === project.id) || lanyardProjects.some((lp) => lp.id === project.id);
+    return socialMediaProjects.some((sp) => sp.id === project.id) || posterProjects.some((pp) => pp.id === project.id) || tarpProjects.some((tp) => tp.id === project.id) || rollupProjects.some((rp) => rp.id === project.id) || printProjects.some((pp) => pp.id === project.id) || presentationProjects.some((pp) => pp.id === project.id) || sublimationProjects.some((sp) => sp.id === project.id) || lanyardProjects.some((lp) => lp.id === project.id);
   }, []);
 
   const handleOpen = useCallback((project) => {

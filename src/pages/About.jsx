@@ -1,4 +1,4 @@
-import { Palette, BookOpen, MonitorSmartphone, Camera, ArrowRight, Github, Linkedin, Facebook, Download } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Facebook, Download } from "lucide-react";
 import { Button } from "@/components/Button";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 

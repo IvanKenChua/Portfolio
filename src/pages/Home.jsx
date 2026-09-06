@@ -5,7 +5,6 @@ import {
   Github,
   Linkedin,
   Facebook,
-  Download,
   Star,
   ExternalLink,
   Calendar,
