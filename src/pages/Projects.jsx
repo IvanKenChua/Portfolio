@@ -456,20 +456,6 @@ const sublimationProjects = [
 
 const lanyardProjects = [
   {
-    id: "channel-lanyard",
-    title: "The Channel Lanyard",
-    category: "Lanyard",
-    description: "A lanyard design for The Channel, the official student publication of Divine Word College of Legazpi.",
-    year: "2025",
-    software: ["Adobe Photoshop", "Adobe Illustrator"],
-    cover: "/projects/lanyard/the_channel/the_channel_lanyard-cover.png",
-    images: [
-      "/projects/lanyard/the_channel/the_channel_lanyard-cover.png",
-      "/projects/lanyard/the_channel/the_channel_lanyard.png",
-    ],
-    featured: true,
-  },
-  {
     id: "machighian-lanyard",
     title: "The Machighian Lanyard",
     category: "Lanyard",
@@ -480,6 +466,20 @@ const lanyardProjects = [
     images: [
       "/projects/lanyard/the_machighian/the_machighian_lanyard-cover.png",
       "/projects/lanyard/the_machighian/the_machighian_lanyard.png",
+    ],
+    featured: true,
+  },
+  {
+    id: "channel-lanyard",
+    title: "The Channel Lanyard",
+    category: "Lanyard",
+    description: "A lanyard design for The Channel, the official student publication of Divine Word College of Legazpi.",
+    year: "2025",
+    software: ["Adobe Photoshop", "Adobe Illustrator"],
+    cover: "/projects/lanyard/the_channel/the_channel_lanyard-cover.png",
+    images: [
+      "/projects/lanyard/the_channel/the_channel_lanyard-cover.png",
+      "/projects/lanyard/the_channel/the_channel_lanyard.png",
     ],
     featured: true,
   },
