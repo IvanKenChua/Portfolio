@@ -344,6 +344,22 @@ const printProjects = [
       "/projects/prints/dwcl_trifold_brochure/dwcl_trifold_brochure_back.png",
     ],
   },
+  {
+    id: "batch-2026-yearbook",
+    title: "Batch 2026 Yearbook",
+    category: "Prints",
+    description: "The Senior Student Council (SSC) Class of 2026 — Batch Per Aspera Ad Finem yearbook design for Divine Word College of Legazpi. Includes front cover, administrators message, back cover, and graduates page.",
+    year: "2026",
+    software: ["Adobe Photoshop"],
+    cover: "/projects/prints/batch_2026_yearbook/batch2026_yearbook-cover.png",
+    images: [
+      "/projects/prints/batch_2026_yearbook/batch2026_yearbook-cover.png",
+      "/projects/prints/batch_2026_yearbook/batch2026_yearbook1.png",
+      "/projects/prints/batch_2026_yearbook/batch2026_yearbook2.png",
+      "/projects/prints/batch_2026_yearbook/batch2026_yearbook3.png",
+      "/projects/prints/batch_2026_yearbook/batch2026_yearbook4.png",
+    ],
+  },
 ];
 
 const presentationProjects = [
@@ -769,6 +785,8 @@ export const Projects = () => {
   const filteredProjects = useMemo(() => {
     const list = activeCategory === "All" ? projects : projects.filter((p) => p.category === activeCategory);
     return [...list].sort((a, b) => {
+      if (a.id === "batch-2026-yearbook") return -1;
+      if (b.id === "batch-2026-yearbook") return 1;
       const aGallery = socialMediaProjects.some((sp) => sp.id === a.id) || posterProjects.some((pp) => pp.id === a.id) || tarpProjects.some((tp) => tp.id === a.id) || rollupProjects.some((rp) => rp.id === a.id) || printProjects.some((pp) => pp.id === a.id) || presentationProjects.some((pp) => pp.id === a.id) || sublimationProjects.some((sp) => sp.id === a.id) || lanyardProjects.some((lp) => lp.id === a.id);
       const bGallery = socialMediaProjects.some((sp) => sp.id === b.id) || posterProjects.some((pp) => pp.id === b.id) || tarpProjects.some((tp) => tp.id === b.id) || rollupProjects.some((rp) => rp.id === b.id) || printProjects.some((pp) => pp.id === b.id) || presentationProjects.some((pp) => pp.id === b.id) || sublimationProjects.some((sp) => sp.id === b.id) || lanyardProjects.some((lp) => lp.id === b.id);
       if (aGallery && !bGallery) return -1;

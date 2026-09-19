@@ -1,6 +1,8 @@
-import { ArrowRight, Github, Linkedin, Facebook, Download } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ArrowRight, Github, Linkedin, Facebook, ExternalLink, X } from "lucide-react";
 import { Button } from "@/components/Button";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import FlipbookModal from "@/components/FlipbookModal";
 
 const socials = [
   {
@@ -83,7 +85,46 @@ const hideBrokenImage = (e) => {
   e.currentTarget.style.display = "none";
 };
 
+const PDFModal = ({ src, title, onClose }) => {
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  return (
+    <div className="fixed inset-0 z-[100] overflow-y-auto" role="dialog" aria-modal="true">
+      <div className="absolute inset-0 bg-background/85 backdrop-blur-sm animate-fade-in" onClick={onClose} aria-hidden="true" />
+      <div className="relative min-h-full flex items-center justify-center p-4 sm:p-8">
+        <div className="relative glass-strong rounded-2xl w-full max-w-4xl h-[90vh] overflow-hidden animate-filter-in">
+          <button
+            onClick={onClose}
+            aria-label={`Close ${title} preview`}
+            className="sticky top-4 z-20 ml-auto mr-4 mt-4 block p-2 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all"
+          >
+            <X className="w-5 h-5" />
+          </button>
+          <iframe
+            src={src}
+            title={title}
+            className="w-full h-[calc(100%-60px)] rounded-b-2xl"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const About = () => {
+  const [showCV, setShowCV] = useState(false);
+  const [showPortfolio, setShowPortfolio] = useState(false);
+
   return (
     <div className="min-h-screen">
       {/* About Section */}
@@ -117,18 +158,25 @@ export const About = () => {
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+              <div className="flex flex-nowrap items-center gap-4 animate-fade-in animation-delay-300">
                 <Button as="a" href="/contact" size="lg">
                   Contact Me <ArrowRight className="w-5 h-5" />
                 </Button>
                 <AnimatedBorderButton
-                  as="a"
-                  href="/(RESUME) CHUA, Ivan Ken B.pdf"
-                  download="(RESUME) CHUA, Ivan Ken B.pdf"
+                  as="button"
+                  onClick={() => setShowCV(true)}
                   size="lg"
                 >
-                  <Download className="w-5 h-5" />
-                  Download CV
+                  <ExternalLink className="w-5 h-5" />
+                  View CV
+                </AnimatedBorderButton>
+                <AnimatedBorderButton
+                  as="button"
+                  onClick={() => setShowPortfolio(true)}
+                  size="lg"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  Portfolio
                 </AnimatedBorderButton>
               </div>
 
@@ -317,6 +365,21 @@ export const About = () => {
           </div>
         </div>
       </section>
+
+      {showCV && (
+        <PDFModal
+          src="/(RESUME) CHUA, Ivan Ken Brazal.pdf"
+          title="Resume Preview"
+          onClose={() => setShowCV(false)}
+        />
+      )}
+      {showPortfolio && (
+        <FlipbookModal
+          src="/(PORTFOLIO) CHUA, Ivan Ken Brazal.pdf"
+          title="Portfolio"
+          onClose={() => setShowPortfolio(false)}
+        />
+      )}
     </div>
   );
 };
