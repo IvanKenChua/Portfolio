@@ -239,6 +239,13 @@ export const Home = () => {
                 </p>
               </div>
 
+              {/* CTA */}
+              <div className="animate-fade-in animation-delay-300">
+                <Button as="a" href="/about" size="lg">
+                  Get to Know Me <ArrowRight className="w-5 h-5" />
+                </Button>
+              </div>
+
               {/* Social Links */}
               <div className="flex items-center gap-3 animate-fade-in animation-delay-300">
                 <span className="text-sm text-muted-foreground">Follow me:</span>
