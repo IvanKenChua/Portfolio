@@ -46,7 +46,7 @@ const experiences = [
     technologies: ["Microsoft Office", "Canva", "Google Slides"],
     bullets: [
       "Managed official documentation, administrative records, and minutes of the meeting using Microsoft Office, leading to organized and efficient council operations.",
-      "Assisted the Student Affairs and Services Office (SASO) in daily operations, ensuring smooth administrative processes and enhanced student services.",
+      "Assisted the Student Affairs Office (SAO) in daily operations, ensuring smooth administrative processes and enhanced student services.",
       "Designed presentation slides for the 58th DWCL Commencement Exercises, elevating the professionalism and visual quality of the program.",
       "Represented the graduating class in the Senior Student Council, overseeing production of the Batch 2026 Graduates' Yearbook, including the 9x12-inch landscape cover layout designed using Adobe Photoshop.",
       "Coordinated and handled the Batch 2026 Legacy Project, improving student spaces and providing resources that benefit students and accredited student organizations at DWCL.",

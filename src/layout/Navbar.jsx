@@ -66,9 +66,9 @@ export const Navbar = () => {
           <div className="glass rounded-full px-1.5 py-1 flex items-center gap-1 h-10">
             <Link
               to="/"
-              className={`inline-flex items-center justify-center h-full px-4 text-sm rounded-full transition-colors ${
+              className={`inline-flex items-center justify-center h-full px-4 text-sm rounded-full transition-all duration-300 ${
                 location.pathname === "/"
-                  ? "text-foreground bg-surface"
+                  ? "bg-primary text-primary-foreground font-medium shadow-[0_0_12px_rgba(32,178,166,0.4)]"
                   : "text-muted-foreground hover:text-foreground hover:bg-surface"
               }`}
             >
@@ -78,9 +78,9 @@ export const Navbar = () => {
               <Link
                 to={link.href}
                 key={link.href}
-                className={`inline-flex items-center justify-center h-full px-4 text-sm rounded-full transition-colors ${
+                className={`inline-flex items-center justify-center h-full px-4 text-sm rounded-full transition-all duration-300 ${
                   location.pathname === link.href
-                    ? "text-foreground bg-surface"
+                    ? "bg-primary text-primary-foreground font-medium shadow-[0_0_12px_rgba(32,178,166,0.4)]"
                     : "text-muted-foreground hover:text-foreground hover:bg-surface"
                 }`}
               >
@@ -116,9 +116,9 @@ export const Navbar = () => {
             <Link
               to="/"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`text-lg py-3 px-3 rounded-xl transition-colors ${
+              className={`text-lg py-3 px-3 rounded-xl transition-all duration-300 ${
                 location.pathname === "/"
-                  ? "text-foreground bg-surface"
+                  ? "bg-primary text-primary-foreground font-medium shadow-[0_0_12px_rgba(32,178,166,0.4)]"
                   : "text-muted-foreground hover:text-foreground hover:bg-surface"
               }`}
             >
@@ -129,9 +129,9 @@ export const Navbar = () => {
                 to={link.href}
                 key={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-lg py-3 px-3 rounded-xl transition-colors ${
+                className={`text-lg py-3 px-3 rounded-xl transition-all duration-300 ${
                   location.pathname === link.href
-                    ? "text-foreground bg-surface"
+                    ? "bg-primary text-primary-foreground font-medium shadow-[0_0_12px_rgba(32,178,166,0.4)]"
                     : "text-muted-foreground hover:text-foreground hover:bg-surface"
                 }`}
               >
