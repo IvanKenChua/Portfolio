@@ -714,14 +714,14 @@ const SocialMediaModal = ({ project, onClose }) => {
                   <button
                     onClick={handlePrev}
                     aria-label="Previous design"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
                   <button
                     onClick={handleNext}
                     aria-label="Next design"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all"
                   >
                     <ChevronRight className="w-5 h-5" />
                   </button>

@@ -316,7 +316,7 @@ const FlipbookModal = ({ src, title, onClose }) => {
         <div
           ref={bookAreaRef}
           className="absolute inset-0 flex items-center justify-center"
-          style={{ padding: isMobile ? "48px 8px 48px" : "56px 56px 56px" }}
+          style={{ padding: isMobile ? "48px 20px 48px" : "56px 56px 56px" }}
         >
           <div
             className={`relative flex items-center justify-center transition-transform duration-350 ease-in-out ${
@@ -332,7 +332,7 @@ const FlipbookModal = ({ src, title, onClose }) => {
               onClick={goPrev}
               disabled={!canGoPrev || isFlipping}
               aria-label="Previous page"
-              className="absolute -left-4 sm:-left-8 md:-left-10 z-20 p-2 sm:p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none"
+              className="absolute -left-4 sm:-left-8 md:-left-10 z-20 p-3 sm:p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none"
             >
               <ChevronLeft className="w-5 h-5 sm:w-7 sm:h-7" />
             </button>
@@ -378,7 +378,7 @@ const FlipbookModal = ({ src, title, onClose }) => {
               onClick={goNext}
               disabled={!canGoNext || isFlipping}
               aria-label="Next page"
-              className="absolute -right-4 sm:-right-8 md:-right-10 z-20 p-2 sm:p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none"
+              className="absolute -right-4 sm:-right-8 md:-right-10 z-20 p-3 sm:p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none"
             >
               <ChevronRight className="w-5 h-5 sm:w-7 sm:h-7" />
             </button>

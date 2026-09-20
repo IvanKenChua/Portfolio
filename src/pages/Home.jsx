@@ -168,15 +168,15 @@ export const Home = () => {
         {/* Decorative Gradient Orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <div
-            className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full opacity-[0.07] blur-3xl"
+            className="absolute -top-32 -right-32 w-[250px] sm:w-[400px] lg:w-[500px] h-[250px] sm:h-[400px] lg:h-[500px] rounded-full opacity-[0.07] blur-3xl"
             style={{ background: "radial-gradient(circle, var(--color-primary), transparent 70%)" }}
           />
           <div
-            className="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full opacity-[0.05] blur-3xl"
+            className="absolute -bottom-24 -left-24 w-[200px] sm:w-[350px] lg:w-[400px] h-[200px] sm:h-[350px] lg:h-[400px] rounded-full opacity-[0.05] blur-3xl"
             style={{ background: "radial-gradient(circle, var(--color-primary), transparent 70%)" }}
           />
           <div
-            className="absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full opacity-[0.04] blur-3xl"
+            className="absolute top-1/3 right-1/4 w-[150px] sm:w-[250px] lg:w-[300px] h-[150px] sm:h-[250px] lg:h-[300px] rounded-full opacity-[0.04] blur-3xl"
             style={{ background: "radial-gradient(circle, var(--color-highlight), transparent 70%)" }}
           />
         </div>
@@ -230,7 +230,7 @@ export const Home = () => {
 
               {/* Headline */}
               <div className="space-y-2">
-                <h1 className="text-[clamp(3.5rem,10vw,8rem)] font-bold leading-[0.9] tracking-tight animate-fade-in animation-delay-100">
+                <h1 className="text-[clamp(2.25rem,10vw,8rem)] sm:text-[clamp(3.5rem,10vw,8rem)] font-bold leading-[0.9] tracking-tight animate-fade-in animation-delay-100">
                   CREATIVE<br />
                   <span className="font-serif italic font-normal glow-text text-primary">Designer</span>
                 </h1>
@@ -307,7 +307,7 @@ export const Home = () => {
       {/* Featured Work Section */}
       <section className="section-pad relative overflow-hidden">
         <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] sm:w-[450px] lg:w-[600px] h-[300px] sm:h-[450px] lg:h-[600px] bg-primary/5 rounded-full blur-3xl"
           aria-hidden="true"
         />
 
@@ -454,14 +454,14 @@ export const Home = () => {
                       <button
                         onClick={handlePrev}
                         aria-label="Previous design"
-                        className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all"
+                        className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all"
                       >
                         <ChevronLeft className="w-5 h-5" />
                       </button>
                       <button
                         onClick={handleNext}
                         aria-label="Next design"
-                        className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all"
                       >
                         <ChevronRight className="w-5 h-5" />
                       </button>
