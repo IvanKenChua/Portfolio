@@ -375,7 +375,7 @@ export const About = () => {
       )}
       {showPortfolio && (
         <FlipbookModal
-          src="/(PORTFOLIO) CHUA, Ivan Ken Brazal.pdf"
+          src="/portfolio.pdf"
           title="Portfolio"
           onClose={() => setShowPortfolio(false)}
         />

@@ -273,7 +273,7 @@ const FlipbookModal = ({ src, title, onClose }) => {
       <button
         onClick={toggleFullscreen}
         aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
-        className="absolute top-3 right-12 sm:top-4 sm:right-14 z-30 p-2 sm:p-2.5 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all duration-300"
+        className="absolute top-3 right-14 sm:top-4 sm:right-16 z-30 p-2 sm:p-2.5 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all duration-300"
       >
         {isFullscreen ? <Minimize2 className="w-5 h-5" /> : <Maximize2 className="w-5 h-5" />}
       </button>
