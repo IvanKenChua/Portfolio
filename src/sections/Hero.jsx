@@ -205,7 +205,7 @@ export const Hero = () => {
               <div className="relative glass rounded-3xl p-2 glow-border">
                 {/* Fallback placeholder if image is missing */}
                 <img
-                  src="/profile-photo.png"
+                  src="/profile.png"
                   alt="Ivan Ken Chua"
                   onError={hideBrokenImage}
                   className="relative w-full aspect-[4/5] object-cover rounded-2xl"
@@ -255,7 +255,7 @@ export const Hero = () => {
       )}
       {showPortfolio && (
         <FlipbookModal
-          src="/(PORTFOLIO) CHUA, Ivan Ken Brazal.pdf"
+          src="/portfolio.pdf"
           title="Portfolio"
           onClose={() => setShowPortfolio(false)}
         />
