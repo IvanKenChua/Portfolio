@@ -101,7 +101,7 @@ export const Home = () => {
 
   const galleryImages = useMemo(() => {
     if (!selectedProject) return [];
-    return selectedProject.images;
+    return selectedProject.images.filter((img) => !img.toLowerCase().includes("cover"));
   }, [selectedProject]);
 
   const handlePrev = useCallback(() => {

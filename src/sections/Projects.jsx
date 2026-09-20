@@ -787,7 +787,7 @@ export const Projects = () => {
         ? projects
         : projects.filter((p) => p.category === activeCategory);
     return [...list].sort(
-      (a, b) => Number(b.featured) - Number(a.featured)
+      (a, b) => Number(b.year) - Number(a.year)
     );
   }, [activeCategory]);
 

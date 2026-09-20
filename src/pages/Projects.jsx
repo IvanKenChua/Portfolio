@@ -192,7 +192,7 @@ const socialMediaProjects = [
     title: "The Channel — Christmas",
     category: "Social Media Graphics",
     description: "A Christmas countdown series for The Channel publication.",
-    year: "2024",
+    year: "2025",
     cover: "/projects/socialmedia_graphics/thechannel_christmas/thechannel-christmas-countdown-cover.png",
     images: [
       "/projects/socialmedia_graphics/thechannel_christmas/thechannel-christmas-countdown-cover.png",
@@ -208,7 +208,7 @@ const socialMediaProjects = [
     title: "The Channel — New Year",
     category: "Social Media Graphics",
     description: "A New Year countdown series for The Channel publication.",
-    year: "2025",
+    year: "2024",
     cover: "/projects/socialmedia_graphics/thechannel_newyear/thechannel-nycountdown-cover.png",
     images: [
       "/projects/socialmedia_graphics/thechannel_newyear/thechannel-nycountdown-cover.png",
@@ -780,14 +780,17 @@ export const Projects = () => {
 
   const filteredProjects = useMemo(() => {
     const list = activeCategory === "All" ? projects : projects.filter((p) => p.category === activeCategory);
+    const priorityOrder = {
+      "batch-2026-yearbook": 1,
+      "machighian-jacket": 2,
+      "machighian-polo-shirt": 3,
+      "machighian-lanyard": 4,
+    };
     return [...list].sort((a, b) => {
-      if (a.id === "batch-2026-yearbook") return -1;
-      if (b.id === "batch-2026-yearbook") return 1;
-      const aGallery = socialMediaProjects.some((sp) => sp.id === a.id) || posterProjects.some((pp) => pp.id === a.id) || tarpProjects.some((tp) => tp.id === a.id) || printProjects.some((pp) => pp.id === a.id) || presentationProjects.some((pp) => pp.id === a.id) || sublimationProjects.some((sp) => sp.id === a.id) || lanyardProjects.some((lp) => lp.id === a.id);
-      const bGallery = socialMediaProjects.some((sp) => sp.id === b.id) || posterProjects.some((pp) => pp.id === b.id) || tarpProjects.some((tp) => tp.id === b.id) || printProjects.some((pp) => pp.id === b.id) || presentationProjects.some((pp) => pp.id === b.id) || sublimationProjects.some((sp) => sp.id === b.id) || lanyardProjects.some((lp) => lp.id === b.id);
-      if (aGallery && !bGallery) return -1;
-      if (!aGallery && bGallery) return 1;
-      return Number(b.featured || false) - Number(a.featured || false);
+      const pa = priorityOrder[a.id] ?? Infinity;
+      const pb = priorityOrder[b.id] ?? Infinity;
+      if (pa !== pb) return pa - pb;
+      return Number(b.year) - Number(a.year);
     });
   }, [activeCategory]);
 
