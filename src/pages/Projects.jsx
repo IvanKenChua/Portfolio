@@ -15,12 +15,11 @@ const categories = [
   "All",
   "Posters",
   "Social Media Graphics",
-  "Roll-up Banners",
   "Tarpaulins",
   "Prints",
-  "Presentation Design",
+  "Presentations",
   "Sublimation",
-  "Lanyard",
+  "Lanyards",
 ];
 
 const socialMediaProjects = [
@@ -274,9 +273,9 @@ const posterProjects = [
     description: "A collection of promotional window posters created for Better Batter Café, featuring baked goods, brownies, cookies, coffee, and featured café selections.",
     year: "2026",
     software: ["Adobe Photoshop", "Canva"],
-    cover: "/projects/posters/bbc_windowposter/bbc-windowposter-cover.png",
+    cover: "/projects/posters/bbc_windowposter/bbc-poster-cover.png",
     images: [
-      "/projects/posters/bbc_windowposter/bbc-windowposter-cover.png",
+      "/projects/posters/bbc_windowposter/bbc-poster-cover.png",
       "/projects/posters/bbc_windowposter/bbc_windowposter_bakedbrownies.png",
       "/projects/posters/bbc_windowposter/bbc_windowposter_bakedgoods.png",
       "/projects/posters/bbc_windowposter/bbc_windowposter_brownies.png",
@@ -296,9 +295,9 @@ const tarpProjects = [
     description: "A tarpaulin displaying the academic programs offered by each department.",
     year: "2026",
     software: ["Adobe InDesign", "Adobe Photoshop"],
-    cover: "/projects/tarpaulin/programs_offered_tarp/dwcl-programstarpaulin-cover.png",
+    cover: "/projects/tarpaulin/programs_offered_tarp/dwcl-programstarp-cover.png",
     images: [
-      "/projects/tarpaulin/programs_offered_tarp/dwcl-programstarpaulin-cover.png",
+      "/projects/tarpaulin/programs_offered_tarp/dwcl-programstarp-cover.png",
       "/projects/tarpaulin/programs_offered_tarp/dwcl-programs1.png",
       "/projects/tarpaulin/programs_offered_tarp/dwcl-programs2.png",
       "/projects/tarpaulin/programs_offered_tarp/dwcl-programs3.png",
@@ -310,19 +309,16 @@ const tarpProjects = [
       "/projects/tarpaulin/programs_offered_tarp/dwcl-programs9.png",
     ],
   },
-];
-
-const rollupProjects = [
   {
     id: "programs-rollup",
     title: "Programs Offered Roll-up Banner",
-    category: "Roll-up Banners",
+    category: "Tarpaulins",
     description: "A roll-up banner showcasing the academic programs offered by DWCL.",
     year: "2026",
     software: ["Adobe InDesign", "Adobe Photoshop"],
-    cover: "/projects/tarpaulin/rollup_tarp/dwcl-rolluptarp-cover.png",
+    cover: "/projects/tarpaulin/rollup_tarp/dwcl-rolluptarpaulin-cover.png",
     images: [
-      "/projects/tarpaulin/rollup_tarp/dwcl-rolluptarp-cover.png",
+      "/projects/tarpaulin/rollup_tarp/dwcl-rolluptarpaulin-cover.png",
       "/projects/tarpaulin/rollup_tarp/dwcl-rolluptarp1.png",
       "/projects/tarpaulin/rollup_tarp/dwcl-rolluptarp2.png",
     ],
@@ -366,7 +362,7 @@ const presentationProjects = [
   {
     id: "commencement-slides",
     title: "58th DWCL Commencement Exercises",
-    category: "Presentation Design",
+    category: "Presentations",
     description: "A presentation design for the 58th DWCL Commencement Exercises.",
     year: "2026",
     software: ["Microsoft PowerPoint", "Adobe Photoshop"],
@@ -404,7 +400,7 @@ const presentationProjects = [
   {
     id: "clinical-graduation",
     title: "3rd DWCL Clinical Graduation",
-    category: "Presentation Design",
+    category: "Presentations",
     description: "A presentation design created for the 3rd DWCL Clinical Graduation ceremony.",
     year: "2026",
     software: ["Microsoft PowerPoint", "Google Slides"],
@@ -474,7 +470,7 @@ const lanyardProjects = [
   {
     id: "machighian-lanyard",
     title: "The Machighian Lanyard",
-    category: "Lanyard",
+    category: "Lanyards",
     description: "A lanyard design for The Machighian, the official school-community publication of Macalaya National High School.",
     year: "2026",
     software: ["Adobe Photoshop", "Adobe Illustrator"],
@@ -488,7 +484,7 @@ const lanyardProjects = [
   {
     id: "channel-lanyard",
     title: "The Channel Lanyard",
-    category: "Lanyard",
+    category: "Lanyards",
     description: "A lanyard design for The Channel, the official student publication of Divine Word College of Legazpi.",
     year: "2025",
     software: ["Adobe Photoshop", "Adobe Illustrator"],
@@ -501,7 +497,7 @@ const lanyardProjects = [
   },
 ];
 
-const projects = [...posterProjects, ...socialMediaProjects, ...tarpProjects, ...rollupProjects, ...printProjects, ...presentationProjects, ...sublimationProjects, ...lanyardProjects];
+const projects = [...posterProjects, ...socialMediaProjects, ...tarpProjects, ...printProjects, ...presentationProjects, ...sublimationProjects, ...lanyardProjects];
 
 const hideBrokenImage = (e) => {
   e.currentTarget.remove();
@@ -787,8 +783,8 @@ export const Projects = () => {
     return [...list].sort((a, b) => {
       if (a.id === "batch-2026-yearbook") return -1;
       if (b.id === "batch-2026-yearbook") return 1;
-      const aGallery = socialMediaProjects.some((sp) => sp.id === a.id) || posterProjects.some((pp) => pp.id === a.id) || tarpProjects.some((tp) => tp.id === a.id) || rollupProjects.some((rp) => rp.id === a.id) || printProjects.some((pp) => pp.id === a.id) || presentationProjects.some((pp) => pp.id === a.id) || sublimationProjects.some((sp) => sp.id === a.id) || lanyardProjects.some((lp) => lp.id === a.id);
-      const bGallery = socialMediaProjects.some((sp) => sp.id === b.id) || posterProjects.some((pp) => pp.id === b.id) || tarpProjects.some((tp) => tp.id === b.id) || rollupProjects.some((rp) => rp.id === b.id) || printProjects.some((pp) => pp.id === b.id) || presentationProjects.some((pp) => pp.id === b.id) || sublimationProjects.some((sp) => sp.id === b.id) || lanyardProjects.some((lp) => lp.id === b.id);
+      const aGallery = socialMediaProjects.some((sp) => sp.id === a.id) || posterProjects.some((pp) => pp.id === a.id) || tarpProjects.some((tp) => tp.id === a.id) || printProjects.some((pp) => pp.id === a.id) || presentationProjects.some((pp) => pp.id === a.id) || sublimationProjects.some((sp) => sp.id === a.id) || lanyardProjects.some((lp) => lp.id === a.id);
+      const bGallery = socialMediaProjects.some((sp) => sp.id === b.id) || posterProjects.some((pp) => pp.id === b.id) || tarpProjects.some((tp) => tp.id === b.id) || printProjects.some((pp) => pp.id === b.id) || presentationProjects.some((pp) => pp.id === b.id) || sublimationProjects.some((sp) => sp.id === b.id) || lanyardProjects.some((lp) => lp.id === b.id);
       if (aGallery && !bGallery) return -1;
       if (!aGallery && bGallery) return 1;
       return Number(b.featured || false) - Number(a.featured || false);
@@ -796,7 +792,7 @@ export const Projects = () => {
   }, [activeCategory]);
 
   const isGalleryProject = useCallback((project) => {
-    return socialMediaProjects.some((sp) => sp.id === project.id) || posterProjects.some((pp) => pp.id === project.id) || tarpProjects.some((tp) => tp.id === project.id) || rollupProjects.some((rp) => rp.id === project.id) || printProjects.some((pp) => pp.id === project.id) || presentationProjects.some((pp) => pp.id === project.id) || sublimationProjects.some((sp) => sp.id === project.id) || lanyardProjects.some((lp) => lp.id === project.id);
+    return socialMediaProjects.some((sp) => sp.id === project.id) || posterProjects.some((pp) => pp.id === project.id) || tarpProjects.some((tp) => tp.id === project.id) || printProjects.some((pp) => pp.id === project.id) || presentationProjects.some((pp) => pp.id === project.id) || sublimationProjects.some((sp) => sp.id === project.id) || lanyardProjects.some((lp) => lp.id === project.id);
   }, []);
 
   const handleOpen = useCallback((project) => {

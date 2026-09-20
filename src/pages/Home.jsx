@@ -2,15 +2,18 @@ import { Button } from "@/components/Button";
 import {
   ArrowRight,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Github,
   Linkedin,
   Facebook,
   Star,
   ExternalLink,
   Calendar,
+  X,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
-import { useMemo } from "react";
+import { useMemo, useState, useCallback, useRef, useEffect } from "react";
 
 const socials = [
   {
@@ -34,33 +37,6 @@ const hideBrokenImage = (e) => {
   e.currentTarget.style.display = "none";
 };
 
-const featuredProjects = [
-  {
-    id: "bbc-menu",
-    title: "Better Batter Café Menu",
-    category: "Posters",
-    description: "A café menu designed with a clean, appetizing layout and consistent branding.",
-    year: "2026",
-    thumbnail: "/projects/posters/bbc_menu/bbc-menu-cover.png",
-  },
-  {
-    id: "bbc-menuboard",
-    title: "Better Batter Café Menu Board",
-    category: "Posters",
-    description: "A menu board design featuring food and beverage selections with clear visual presentation.",
-    year: "2026",
-    thumbnail: "/projects/posters/bbc_menuboard/bbc-menuboard-cover.png",
-  },
-  {
-    id: "bbc-windowposter",
-    title: "Better Batter Café Window Posters",
-    category: "Posters",
-    description: "A collection of promotional window posters for Better Batter Café.",
-    year: "2026",
-    thumbnail: "/projects/posters/bbc_windowposter/bbc-windowposter-cover.png",
-  },
-];
-
 const seededRandom = (seed) => {
   let state = seed;
   return () => {
@@ -69,7 +45,101 @@ const seededRandom = (seed) => {
   };
 };
 
+const featuredProjects = [
+  {
+    id: "batch-2026-yearbook",
+    title: "Batch 2026 Yearbook",
+    category: "Prints",
+    description: "The Senior Student Council (SSC) Class of 2026 — Batch Per Aspera Ad Finem yearbook design for Divine Word College of Legazpi. Includes front cover, administrators message, back cover, and graduates page.",
+    year: "2026",
+    thumbnail: "/projects/prints/batch_2026_yearbook/batch2026_yearbook-cover.png",
+    images: [
+      "/projects/prints/batch_2026_yearbook/batch2026_yearbook-cover.png",
+      "/projects/prints/batch_2026_yearbook/batch2026_yearbook1.png",
+      "/projects/prints/batch_2026_yearbook/batch2026_yearbook2.png",
+      "/projects/prints/batch_2026_yearbook/batch2026_yearbook3.png",
+      "/projects/prints/batch_2026_yearbook/batch2026_yearbook4.png",
+    ],
+  },
+  {
+    id: "machighian-polo-shirt",
+    title: "The Machighian Polo Shirt",
+    category: "Sublimation",
+    description: "A sublimation-printed polo shirt design for The Machighian, showcasing school identity through vibrant apparel graphics.",
+    year: "2026",
+    thumbnail: "/projects/sublimation/the_machighian_polo_shirt/the_machighian_poloshirt-cover.png",
+    images: [
+      "/projects/sublimation/the_machighian_polo_shirt/the_machighian_poloshirt-cover.png",
+      "/projects/sublimation/the_machighian_polo_shirt/the_machighian_poloshirt1.png",
+      "/projects/sublimation/the_machighian_polo_shirt/the_machighian_poloshirt2.png",
+    ],
+  },
+  {
+    id: "bbc-windowposter",
+    title: "Better Batter Café Window Posters",
+    category: "Posters",
+    description: "A collection of promotional window posters created for Better Batter Café, featuring baked goods, brownies, cookies, coffee, and featured café selections.",
+    year: "2026",
+    thumbnail: "/projects/posters/bbc_windowposter/bbc-poster-cover.png",
+    images: [
+      "/projects/posters/bbc_windowposter/bbc-poster-cover.png",
+      "/projects/posters/bbc_windowposter/bbc_windowposter_bakedbrownies.png",
+      "/projects/posters/bbc_windowposter/bbc_windowposter_bakedgoods.png",
+      "/projects/posters/bbc_windowposter/bbc_windowposter_brownies.png",
+      "/projects/posters/bbc_windowposter/bbc_windowposter_cookies.png",
+      "/projects/posters/bbc_windowposter/bbc_windowposter_favepicks.png",
+      "/projects/posters/bbc_windowposter/bbc_windowposter_saigoncoffee.png",
+      "/projects/posters/bbc_windowposter/bbc_windowposter_saigoncoffee2.png",
+    ],
+  },
+];
+
 export const Home = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const thumbnailRef = useRef(null);
+
+  const galleryImages = useMemo(() => {
+    if (!selectedProject) return [];
+    return selectedProject.images;
+  }, [selectedProject]);
+
+  const handlePrev = useCallback(() => {
+    setActiveIndex((i) => (i === 0 ? galleryImages.length - 1 : i - 1));
+  }, [galleryImages.length]);
+
+  const handleNext = useCallback(() => {
+    setActiveIndex((i) => (i === galleryImages.length - 1 ? 0 : i + 1));
+  }, [galleryImages.length]);
+
+  const handleClose = useCallback(() => {
+    setSelectedProject(null);
+    setActiveIndex(0);
+  }, []);
+
+  useEffect(() => {
+    if (!selectedProject) return;
+    const handleKey = (e) => {
+      if (e.key === "Escape") handleClose();
+      if (e.key === "ArrowLeft") handlePrev();
+      if (e.key === "ArrowRight") handleNext();
+    };
+    window.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+    };
+  }, [selectedProject, handleClose, handlePrev, handleNext]);
+
+  useEffect(() => {
+    if (thumbnailRef.current) {
+      const activeThumb = thumbnailRef.current.children[activeIndex];
+      if (activeThumb) {
+        activeThumb.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      }
+    }
+  }, [activeIndex]);
   const dots = useMemo(() => {
     const rand = seededRandom(42);
     return [...Array(20)].map((_, i) => ({
@@ -250,12 +320,10 @@ export const Home = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {featuredProjects.map((project, idx) => (
-              <a
+              <button
                 key={project.id}
-                href={project.link || "/projects"}
-                target={project.link ? "_blank" : undefined}
-                rel={project.link ? "noopener noreferrer" : undefined}
-                className="group glass rounded-2xl overflow-hidden flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(32,178,166,0.25)] animate-fade-in"
+                onClick={() => { setSelectedProject(project); setActiveIndex(0); }}
+                className="group glass rounded-2xl overflow-hidden flex flex-col text-left transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(32,178,166,0.25)] animate-fade-in cursor-pointer"
                 style={{ animationDelay: `${(idx + 1) * 100}ms` }}
               >
                 <div className="relative aspect-square overflow-hidden bg-surface">
@@ -290,10 +358,10 @@ export const Home = () => {
                     {project.description}
                   </p>
                   <span className="self-start inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:gap-2.5 transition-all duration-300">
-                    View Project <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                    View Gallery <ExternalLink className="w-4 h-4" aria-hidden="true" />
                   </span>
                 </div>
-              </a>
+              </button>
             ))}
           </div>
 
@@ -337,6 +405,105 @@ export const Home = () => {
           </div>
         </div>
       </section>
+      {/* Project Gallery Modal */}
+      {selectedProject && (
+        <div className="fixed inset-0 z-[100] overflow-y-auto" role="dialog" aria-modal="true">
+          <div className="absolute inset-0 bg-background/85 backdrop-blur-sm animate-fade-in" onClick={handleClose} aria-hidden="true" />
+          <div className="relative min-h-full flex items-center justify-center p-4 sm:p-6 md:p-8">
+            <div className="relative glass-strong rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto animate-filter-in">
+              {/* Close button */}
+              <button
+                onClick={handleClose}
+                aria-label="Close gallery"
+                className="sticky top-4 z-20 ml-auto mr-4 mt-4 block p-2 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Header */}
+              <div className="px-6 sm:px-8 pt-2 pb-4">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <span className="glass rounded-full px-3 py-1 text-xs font-medium text-primary">{selectedProject.category}</span>
+                  <span className="text-xs text-muted-foreground">{selectedProject.year}</span>
+                  <span className="text-xs text-muted-foreground">·</span>
+                  <span className="text-xs text-muted-foreground">{galleryImages.length} designs</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold">{selectedProject.title}</h3>
+              </div>
+
+              {/* Main Image */}
+              <div className="relative px-6 sm:px-8">
+                <div className="relative bg-surface rounded-xl overflow-hidden">
+                  <img
+                    src={galleryImages[activeIndex]}
+                    alt={`${selectedProject.title} — Design ${activeIndex + 1}`}
+                    onError={hideBrokenImage}
+                    className="w-full max-h-[50vh] sm:max-h-[55vh] object-contain"
+                  />
+
+                  {/* Navigation arrows */}
+                  {galleryImages.length > 1 && (
+                    <>
+                      <button
+                        onClick={handlePrev}
+                        aria-label="Previous design"
+                        className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all"
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                      </button>
+                      <button
+                        onClick={handleNext}
+                        aria-label="Next design"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all"
+                      >
+                        <ChevronRight className="w-5 h-5" />
+                      </button>
+                    </>
+                  )}
+
+                  {/* Counter */}
+                  <div className="absolute bottom-3 right-3 glass rounded-full px-3 py-1 text-xs font-medium">
+                    {activeIndex + 1} / {galleryImages.length}
+                  </div>
+                </div>
+              </div>
+
+              {/* Thumbnails */}
+              {galleryImages.length > 1 && (
+                <div
+                  ref={thumbnailRef}
+                  className="flex gap-2 px-6 sm:px-8 mt-4 overflow-x-auto scrollbar-hide pb-1"
+                >
+                  {galleryImages.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveIndex(idx)}
+                      className={`flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                        idx === activeIndex
+                          ? "border-primary shadow-[0_0_12px_rgba(32,178,166,0.4)]"
+                          : "border-transparent opacity-60 hover:opacity-100"
+                      }`}
+                      aria-label={`View design ${idx + 1}`}
+                    >
+                      <img
+                        src={img}
+                        alt={`Thumbnail ${idx + 1}`}
+                        onError={hideBrokenImage}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Description */}
+              <div className="px-6 sm:px-8 py-5 sm:py-6">
+                <p className="text-muted-foreground leading-relaxed">{selectedProject.description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

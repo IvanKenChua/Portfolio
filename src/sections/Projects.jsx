@@ -14,18 +14,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 const categories = [
   "All",
-  "Publication Design",
+  "Posters",
   "Social Media Graphics",
-  "Roll-up Banners",
   "Tarpaulins",
-  "Brochures",
-  "Presentation Design",
-  "Branding",
-  "Photography",
-  "UI/UX",
-  "Mobile Application",
-  "Print Design",
-  "Lanyard",
+  "Prints",
+  "Presentations",
+  "Sublimation",
+  "Lanyards",
 ];
 
 const GAP = 20;
@@ -206,7 +201,7 @@ const projects = [
 {
   id: "dwcl-admissions-rollup",
   title: "DWCL Admissions Roll-up Banner",
-  category: "Roll-up Banners",
+  category: "Tarpaulins",
   description:
     "A roll-up banner promoting DWCL admissions with clear and readable information.",
   designObjective:
@@ -220,7 +215,7 @@ const projects = [
 {
   id: "programs-rollup",
   title: "Programs Offered Roll-up Banner",
-  category: "Roll-up Banners",
+  category: "Tarpaulins",
   description:
     "A roll-up banner showcasing the academic programs offered by DWCL.",
   designObjective:
@@ -282,7 +277,7 @@ const projects = [
 {
   id: "commencement-slides",
   title: "58th DWCL Commencement Exercises",
-  category: "Presentation Design",
+  category: "Presentations",
   description:
     "A presentation design for the 58th DWCL Commencement Exercises.",
   designObjective:
@@ -297,7 +292,7 @@ const projects = [
 {
   id: "clinical-graduation",
   title: "3rd DWCL Clinical Graduation",
-  category: "Presentation Design",
+  category: "Presentations",
   description:
     "A presentation design created for the 3rd DWCL Clinical Graduation ceremony.",
   designObjective:
@@ -312,7 +307,7 @@ const projects = [
 {
   id: "college-intramurals2025",
   title: "2025 DWCL College Intramurals",
-  category: "Presentation Design",
+  category: "Presentations",
   description:
     "A presentation design created for the 2025 DWCL College Intramurals closing ceremony.",
   designObjective:
@@ -343,7 +338,7 @@ const projects = [
 {
   id: "channel-lanyard",
   title: "The Channel Lanyard",
-  category: "Lanyard",
+  category: "Lanyards",
   description:
     "A lanyard design for The Channel, the official student publication of Divine Word College of Legazpi.",
   designObjective:
@@ -360,7 +355,7 @@ const projects = [
 {
   id: "machighian-lanyard",
   title: "The Machighian Lanyard",
-  category: "Lanyard",
+  category: "Lanyards",
   description:
     "A lanyard design for The Machighian, the official school-community publication of Macalaya National High School.",
   designObjective:
@@ -456,7 +451,7 @@ const projects = [
   {
     id: "certificates",
     title: "Certificates",
-    category: "Print Design",
+    category: "Prints",
     description:
       "Elegant certificate designs for academic achievements and event recognitions.",
     designObjective:
@@ -470,7 +465,7 @@ const projects = [
   {
     id: "flyers",
     title: "Flyers",
-    category: "Print Design",
+    category: "Prints",
     description:
       "A collection of flyers for campus events, promotions, and announcements.",
     designObjective:
@@ -484,7 +479,7 @@ const projects = [
   {
     id: "posters",
     title: "Posters",
-    category: "Print Design",
+    category: "Prints",
     description:
       "A poster series with bold typography and strong visual hierarchy for various campaigns.",
     designObjective:
