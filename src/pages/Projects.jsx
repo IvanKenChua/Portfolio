@@ -327,6 +327,56 @@ const tarpProjects = [
 
 const printProjects = [
   {
+    id: "nics-calendar",
+    title: "NICS Home & Office Furniture Calendar",
+    category: "Prints",
+    description: "A tent-style desk calendar design for NICS Home and Office Furniture Trading, featuring monthly layouts with product highlights and company branding.",
+    year: "2026",
+    software: ["Adobe InDesign", "Adobe Photoshop", "Adobe Illustrator"],
+    cover: "/projects/prints/nics_calendar/NICS_cover.png",
+    images: [
+      "/projects/prints/nics_calendar/NICS_cover.png",
+      "/projects/prints/nics_calendar/13.png",
+      "/projects/prints/nics_calendar/14.png",
+      "/projects/prints/nics_calendar/15.png",
+      "/projects/prints/nics_calendar/16.png",
+      "/projects/prints/nics_calendar/17.png",
+      "/projects/prints/nics_calendar/18.png",
+      "/projects/prints/nics_calendar/19.png",
+      "/projects/prints/nics_calendar/20.png",
+      "/projects/prints/nics_calendar/21.png",
+      "/projects/prints/nics_calendar/22.png",
+      "/projects/prints/nics_calendar/23.png",
+      "/projects/prints/nics_calendar/24.png",
+    ],
+    featured: true,
+  },
+  {
+    id: "cindys-calendar",
+    title: "Cindy's Food Stop Calendar",
+    category: "Prints",
+    description: "A tent-style desk calendar design for Cindy's Food Stop, featuring monthly layouts with food photography, menu highlights, and warm branding.",
+    year: "2026",
+    software: ["Adobe InDesign", "Adobe Photoshop", "Adobe Illustrator"],
+    cover: "/projects/prints/cindys_calendar/CINDYS_cover.png",
+    images: [
+      "/projects/prints/cindys_calendar/CINDYS_cover.png",
+      "/projects/prints/cindys_calendar/1.png",
+      "/projects/prints/cindys_calendar/2.png",
+      "/projects/prints/cindys_calendar/3.png",
+      "/projects/prints/cindys_calendar/4.png",
+      "/projects/prints/cindys_calendar/5.png",
+      "/projects/prints/cindys_calendar/6.png",
+      "/projects/prints/cindys_calendar/7.png",
+      "/projects/prints/cindys_calendar/8.png",
+      "/projects/prints/cindys_calendar/9.png",
+      "/projects/prints/cindys_calendar/10.png",
+      "/projects/prints/cindys_calendar/11.png",
+      "/projects/prints/cindys_calendar/12.png",
+    ],
+    featured: true,
+  },
+  {
     id: "dwcl-brochure",
     title: "DWCL Tri-fold Brochure",
     category: "Prints",
@@ -786,10 +836,12 @@ export const Projects = () => {
   const filteredProjects = useMemo(() => {
     const list = activeCategory === "All" ? projects : projects.filter((p) => p.category === activeCategory);
     const priorityOrder = {
-      "batch-2026-yearbook": 1,
-      "machighian-jacket": 2,
-      "machighian-polo-shirt": 3,
-      "machighian-lanyard": 4,
+      "nics-calendar": 1,
+      "cindys-calendar": 2,
+      "batch-2026-yearbook": 3,
+      "machighian-jacket": 4,
+      "machighian-polo-shirt": 5,
+      "machighian-lanyard": 6,
     };
     return [...list].sort((a, b) => {
       const pa = priorityOrder[a.id] ?? Infinity;
